@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/home_screen/home_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.grey, // Define a cor base para o esquema
         ),
-        appBarTheme: const AppBarTheme(backgroundColor: Colors.black),
+        appBarTheme: const AppBarTheme(
+          elevation: 0,
+          backgroundColor: Colors.black,
+          titleTextStyle: TextStyle(color: Colors.white),
+        ),
+        textTheme: GoogleFonts.bitterTextTheme(),
       ),
       darkTheme: ThemeData(
         useMaterial3: true,
