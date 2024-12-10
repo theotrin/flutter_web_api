@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_api/services/journal_services.dart';
 import 'screens/home_screen/home_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
+
+  JournalService service = JournalService();
+
+  service.register("Ola mundo!");
+  //service.get();
 }
 
 class MyApp extends StatelessWidget {
