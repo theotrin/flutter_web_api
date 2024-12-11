@@ -7,9 +7,7 @@ import "package:http_interceptor/http_interceptor.dart";
 
 class JournalService {
   static const String url =
-      "http://192.168.51.149:3000/"; //json-server --watch --host 192.168.56.1 db.json
-  //192.168.56.1
-  // 192.168.51.149
+      "http://192.168.56.1:3000/"; //json-server --watch --host
   static const String resource = "journals/";
 
   http.Client client =
@@ -19,7 +17,7 @@ class JournalService {
     return "$url$resource";
   }
 
-  Future<void> register(Journal journal) async {
+  Future<bool> register(Journal journal) async {
     try {
       String jsonJournal = json.encode(journal.toMap());
       http.Response response = await client.post(
@@ -37,12 +35,15 @@ class JournalService {
 
       if (response.statusCode == 200 || response.statusCode == 201) {
         print("Registro enviado com sucesso!");
+        return true;
       } else {
         print("Erro ao enviar registro: ${response.statusCode}");
         print("Resposta do servidor: ${response.body}");
+        return false;
       }
     } catch (e) {
       print("Erro ao tentar enviar o registro: $e");
+      return false;
     }
   }
 

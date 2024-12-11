@@ -23,10 +23,28 @@
   ],
   "journals": [
     {
-      "id": "c9fc3920-b7d2-11ef-b9e2-47c7f179fc10",
-      "content": "",
-      "created_at": "2024-12-11 15:15:43.163809",
-      "updated_at": "2024-12-11 15:15:43.163828"
+      "id": "1e77b8f0-b803-11ef-8a99-d1e7d2c27352",
+      "content": "moggada monstra!",
+      "created_at": "2024-12-03 17:01:32.837253",
+      "updated_at": "2024-12-03 17:01:32.837253"
+    },
+    {
+      "id": "7f4c1540-b803-11ef-8a99-d1e7d2c27352",
+      "content": "é quarta-feira meus bacanos",
+      "created_at": "2024-12-04 17:01:32.837253",
+      "updated_at": "2024-12-04 17:01:32.837253"
+    },
+    {
+      "id": "926a2fe0-b803-11ef-8a99-d1e7d2c27352",
+      "content": "segundada",
+      "created_at": "2024-12-02 17:01:32.837253",
+      "updated_at": "2024-12-02 17:01:32.837253"
+    },
+    {
+      "id": "bffacf40-b804-11ef-8a99-d1e7d2c27352",
+      "content": "segunda",
+      "created_at": "2024-12-02 17:01:32.837253",
+      "updated_at": "2024-12-02 17:01:32.837253"
     }
   ]
 }
