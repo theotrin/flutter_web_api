@@ -20,5 +20,13 @@
       "id": "f0c4",
       "content": "Ola mundo!"
     }
+  ],
+  "journals": [
+    {
+      "id": "c9fc3920-b7d2-11ef-b9e2-47c7f179fc10",
+      "content": "",
+      "created_at": "2024-12-11 15:15:43.163809",
+      "updated_at": "2024-12-11 15:15:43.163828"
+    }
   ]
 }
