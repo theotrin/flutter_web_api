@@ -1,4 +1,5 @@
 import "dart:convert";
+import "dart:developer";
 
 import "package:flutter_web_api/models/journal.dart";
 import "package:flutter_web_api/services/http_interceptors.dart";
@@ -34,22 +35,33 @@ class JournalService {
       // );
 
       if (response.statusCode == 200 || response.statusCode == 201) {
-        print("Registro enviado com sucesso!");
+        log("Registro enviado com sucesso!");
         return true;
       } else {
-        print("Erro ao enviar registro: ${response.statusCode}");
-        print("Resposta do servidor: ${response.body}");
+        log("Erro ao enviar registro: ${response.statusCode}");
+        log("Resposta do servidor: ${response.body}");
         return false;
       }
     } catch (e) {
-      print("Erro ao tentar enviar o registro: $e");
+      log("Erro ao tentar enviar o registro: $e");
       return false;
     }
   }
 
-  Future<String> get() async {
-    http.Response response = await client.get(Uri.parse(getUrl()));
-    print(response.body);
-    return response.body;
+  Future<List<Journal>> getAll() async {
+    try {
+      http.Response response = await client.get(Uri.parse(getUrl()));
+      if (response.statusCode != 200) {
+        throw Exception();
+      }
+      List<Journal> list = [];
+      List<dynamic> listDynamic = json.decode(response.body);
+
+      for (var jsonMap in listDynamic) {
+        list.add(Journal.fromMap(jsonMap));
+      }
+    } catch (e) {
+      log("$e");
+    }
   }
 }

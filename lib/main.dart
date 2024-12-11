@@ -9,7 +9,7 @@ void main() {
   runApp(const MyApp());
 
   JournalService service = JournalService();
-  //service.get();
+  service.getAll();
 }
 
 class MyApp extends StatelessWidget {
